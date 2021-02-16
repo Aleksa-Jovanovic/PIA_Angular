@@ -1,0 +1,38 @@
+<h3>Department of Computer Engineering</h3>
+<div id="form-layout">
+    <form [formGroup]="myForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input type="text" matInput formControlName="username">
+            <mat-error *ngIf="username.invalid">
+                Username is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hde password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="password.invalid">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>User type</mat-label>
+            <mat-select formControlName="userType">
+                <mat-option *ngFor="let userType of userTypes" [value]="userType.value">
+                    {{userType.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div id="button-area">
+            <button mat-raised-button [disabled]="myForm.invalid" color="primary">Login</button>
+            <button id="register-button" mat-raised-button color="Basic">Register</button>
+        </div>
+    </form>
+</div>

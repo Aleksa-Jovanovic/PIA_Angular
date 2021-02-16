@@ -1,0 +1,28 @@
+h3 {
+  margin-top: 10px;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+
+#form-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10%;
+}
+
+#form-layout form {
+  width: 15%;
+}
+
+#form-layout mat-form-field {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#form-layout #button-area {
+  display: flex;
+  justify-content: space-between;
+}
